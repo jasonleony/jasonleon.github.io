@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, print-scale: 100%">
+    <title>Jason Leung - Executive Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.45;
+            color: #0f172a;
+            padding: 40px 20px;
+        }
+
+        /* 简历卡片 + A4 尺寸适配 */
+        .resume {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 40px 48px;
+            transition: all 0.2s;
+        }
+
+        /* 打印样式优化 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .resume {
+                box-shadow: none;
+                padding: 0.2in;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .section, .job-item, .education-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            a {
+                text-decoration: none;
+                color: #0f172a;
+            }
+            .contact-info a {
+                color: #0f172a;
+            }
+        }
+
+        /* 头部区域 */
+        .header {
+            border-bottom: 3px solid #1e4a76;
+            padding-bottom: 24px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .name-title h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0c4a6e;
+            margin-bottom: 8px;
+        }
+        .name-title .tagline {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2c3e66;
+            background: #eef2ff;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 30px;
+            margin-top: 6px;
+        }
+        .contact-info {
+            text-align: right;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #1e293b;
+        }
+        .contact-info div {
+            margin-bottom: 4px;
+        }
+        .contact-info a {
+            color: #1e4a76;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* 概要部分 */
+        .summary {
+            background: #f8fafc;
+            padding: 18px 22px;
+            border-radius: 20px;
+            margin-bottom: 32px;
+            border-left: 5px solid #2c6e9e;
+            font-size: 0.95rem;
+            color: #0f172a;
+        }
+
+        /* 通用章节 */
+        .section {
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+            color: #0c4a6e;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 工作经历条目 */
+        .job-item {
+            margin-bottom: 28px;
+            break-inside: avoid;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .company {
+            font-weight: 600;
+            color: #2c6e9e;
+        }
+        .job-date {
+            font-size: 0.8rem;
+            color: #475569;
+            font-weight: 500;
+        }
+        .job-location {
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            margin-bottom: 10px;
+        }
+        .job-desc {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        .job-desc li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            position: relative;
+            padding-left: 20px;
+        }
+        .job-desc li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2c6e9e;
+            font-weight: 600;
+        }
+        .sub-list {
+            list-style: none;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+        .sub-list li {
+            padding-left: 16px;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+        .sub-list li::before {
+            content: "◦";
+            color: #5b6e8c;
+        }
+
+        /* 教育 */
+        .education-item {
+            margin-bottom: 18px;
+        }
+        .edu-degree {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .edu-school {
+            font-weight: 600;
+            color: #1e4a76;
+        }
+        .edu-date {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        /* 技能/核心能力 */
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .skill-tag {
+            background: #eef2ff;
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1e3a8a;
+        }
+
+        /* 两列布局用于底部区域 */
+        .two-col-grid {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .col {
+            flex: 1;
+            min-width: 180px;
+        }
+        hr {
+            margin: 16px 0;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        footer {
+            font-size: 0.7rem;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 32px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 16px;
+        }
+        @media (max-width: 700px) {
+            .resume {
+                padding: 24px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: start;
+                gap: 12px;
+            }
+            .contact-info {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <!-- 头部：姓名 + 联系方式 -->
+    <div class="header">
+        <div class="name-title">
+            <h1>Jason Leung</h1>
+            <div class="tagline">Founder, CEO | Energy Transition & Digitalization Executive</div>
+        </div>
+        <div class="contact-info">
+            <div>📍 Shenzhen · Shanghai · Hong Kong · Singapore</div>
+            <div>📞 +86 186 0303 1190</div>
+            <div>✉️ <a href="mailto:ljz@lvjiantech.com">ljz@lvjiantech.com</a></div>
+            <div>🔗 linkedin.com/in/jason-leung-455a80400</div>
+        </div>
+    </div>
+
+    <!-- 简短摘要 Executive Summary -->
+    <div class="summary">
+        🚀 Enabling Fortune 500 companies to capture opportunities in China’s energy revolution & advanced manufacturing. Government-enterprise bridge, capital deployment & compliance expert. 18+ years blending multinational technology leadership with hands-on operational roles. Led cross-border teams of 800+, executed projects exceeding RMB 10 billion, and delivered multiple national demonstration projects.
+    </div>
+
+    <!-- 工作经验 -->
+    <div class="section">
+        <div class="section-title">💼 Professional Experience</div>
+
+        <!-- 深圳绿建 (最新) -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Founder, General Manager (49% Shareholder & Director)</div>
+                <div class="job-date">Mar 2023 – Present</div>
+            </div>
+            <div class="company">深圳市投资控股有限公司 Shenzhen Investment Holdings Co., LTD (Fortune Global 500) – Second-tier subsidiary: Shenzhen Green Building Technology Co., Ltd.</div>
+            <div class="job-location">Shenzhen, Guangdong · On-site</div>
+            <ul class="job-desc">
+                <li>Pioneered "State-Owned + Private Operation" mixed-ownership model in Shenzhen, achieving 3 consecutive years zero-audit-findings compliance.</li>
+                <li>Integrated 120+ global leaders (Huawei Digital Power, Samsung, Siemens, LG, Mitsubishi Heavy, Sany) – access to 1,100+ patented technologies.</li>
+                <li>Built SOE-controlled curated green & low-carbon product platform (co-development, OEM, sales).</li>
+                <li>Partnered with Huawei Digital Power to invest & operate megawatt-class electric heavy-truck charging stations, supporting Shenzhen’s “Ultra-Charging City” initiative.</li>
+                <li>Delivered 3 years of per-capita gross profit & margin growth; 2025: gross margin +307% YoY, per-capita gross profit +245% YoY.</li>
+                <li>Closed RMB 170M Series B at 50x P/E, post-money valuation RMB 1.2B – new benchmark for mixed-ownership financing.</li>
+            </ul>
+        </div>
+
+        <!-- 三一集团 -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Director, CEO Office / Special Assistant to CEO (Chief of Staff)</div>
+                <div class="job-date">Nov 2020 – Mar 2023</div>
+            </div>
+            <div class="company">SANY Group</div>
+            <div class="job-location">Beijing, Changsha · On-site</div>
+            <ul class="job-desc">
+                <li>Reported directly to Mr. Tang Xiuguo (Chairman & President). Led digital transformation strategy, redefined Sany’s vision and second growth curve (Rootcloud IaaS + core machinery tech + industrial internet).</li>
+                <li>Oversaw digital synergy across real estate, infrastructure, finance, and smart construction divisions.</li>
+                <li>Managed government relations & major strategic projects in South China region.</li>
+                <li>Led IPO readiness for innovation business: due diligence, prospectus co-drafting, financial model optimization, investor coordination.</li>
+                <li>Headed CEO Office, drove structural cost reduction & efficiency, advanced digital/international/electrification transformation, helping Sany achieve 15%+ growth for 3 consecutive years, culminating in strongest growth ever in 2025.</li>
+            </ul>
+        </div>
+
+        <!-- 万科/采筑 -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Chief Digital Officer & Chief Strategy Officer (CDO & CSO)</div>
+                <div class="job-date">Jul 2017 – Nov 2020</div>
+            </div>
+            <div class="company">Vanke Group (Headquarters) & Zhuhai CaiZhu Technology (Founding Partner)</div>
+            <div class="job-location">Shenzhen · On-site</div>
+            <ul class="job-desc">
+                <li>Head of Digitalization, Vanke Corporate Development Center. Initiated “Vanke-Microsoft Future City Joint Lab”, “Longtaitou” initiative. Collaborated with McKinsey, Tsinghua, Microsoft Research to craft 5-year digital strategy.</li>
+                <li>As CSO of CaiZhu: Designed equity structure, governance, business plan, led fundraising and investor communications.</li>
+                <li>As CDO: Transformed internal supply chain unit into No.1 real estate industrial internet platform – achieved full closed-loop intelligence (tendering → settlement). By 2020: RMB 200B planned order value, RMB 200M+ revenue, 3,000+ enterprise clients.</li>
+            </ul>
+        </div>
+
+        <!-- 顺丰 -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Technology Director, CSO Office</div>
+                <div class="job-date">May 2016 – Jun 2017</div>
+            </div>
+            <div class="company">SF Express Co., Ltd.</div>
+            <div class="job-location">Hong Kong SAR & Shenzhen</div>
+            <ul class="job-desc">
+                <li>Repositioned SF as “nation’s largest air cargo supply chain service provider”. Built air cargo trading platform (700k tons/year, 4.6% of China’s total air freight).</li>
+                <li>SF’s air cargo now handles ~1B parcels/year (over 1/3 of national air freight). Widely recognized as “China Memphis model”; endorsed by China Merchants Capital.</li>
+            </ul>
+        </div>
+
+        <!-- Expedia -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Director, Head of R&D Center (China)</div>
+                <div class="job-date">Jun 2009 – Feb 2016</div>
+            </div>
+            <div class="company">Expedia China R&D Center (Partner Company)</div>
+            <div class="job-location">Shanghai / Shenzhen / Seattle</div>
+            <ul class="job-desc">
+                <li>Built China R&D center from 0 to 400+ people in 2 years; led cross-border team of 500+ (US+China), consistently delivered 1/3 of Expedia’s global R&D output.</li>
+                <li>Participated in cross-border acquisition of a Chinese software firm – due diligence, valuation, deal structure, post-merger integration (90-day transition plan).</li>
+                <li>Technical achievements: world’s first dynamic pricing air ticketing system; China’s first car rental big data platform (booking/payment/GDS/ call center); SOA architecture; first large-scale CAAC-compliant database system with Travelport.</li>
+                <li>Center was recognized as “Whampoa Military Academy” of China’s travel e-commerce, with 5–8 year tech advantage over local peers.</li>
+            </ul>
+        </div>
+
+        <!-- StarCite -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Co-Founder, Principal Engineer, Head of Shanghai R&D Center</div>
+                <div class="job-date">May 2006 – Feb 2009</div>
+            </div>
+            <div class="company">StarCite Inc (Silicon Valley & Shanghai)</div>
+            <div class="job-location">Santa Clara, CA & Shanghai</div>
+            <ul class="job-desc">
+                <li>Co-founded the company, established Shanghai R&D Center – China’s first R&D institution focused on B2B hotel booking.</li>
+                <li>Transferred core technology platform from Silicon Valley to Shanghai; recruited teams, defined R&D processes.</li>
+                <li>Directed core internet product development, ensured on-time delivery, and provided technical training to internal/external teams.</li>
+            </ul>
+        </div>
+
+        <!-- Satyam -->
+        <div class="job-item">
+            <div class="job-header">
+                <div class="job-title">Senior Software Engineer / Software Engineer</div>
+                <div class="job-date">Jul 2003 – May 2006</div>
+            </div>
+            <div class="company">Satyam Computer Services Ltd.</div>
+            <div class="job-location">Shanghai, China & Paris, France</div>
+            <ul class="job-desc">
+                <li>Worked in R&D centers (Shanghai/Paris), responsible for operating system and application development for communication products. Contributed to cross-border product delivery.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 教育 + 核心能力 两列布局 -->
+    <div class="two-col-grid">
+        <div class="col">
+            <div class="section">
+                <div class="section-title">🎓 Education</div>
+                <div class="education-item">
+                    <div class="edu-degree">Master of Business Administration (Finance)</div>
+                    <div class="edu-school">Renmin University of China</div>
+                    <div class="edu-date">2015 – 2019</div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-degree">B.Tech, Computer Science</div>
+                    <div class="edu-school">Northeastern University (CN)</div>
+                    <div class="edu-date">1998 – 2003</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="section">
+                <div class="section-title">⚙️ Core Competencies</div>
+                <div class="skills-wrap">
+                    <span class="skill-tag">Government Relations</span>
+                    <span class="skill-tag">Renewable Energy Strategy</span>
+                    <span class="skill-tag">Cross-border M&A</span>
+                    <span class="skill-tag">Digital Transformation</span>
+                    <span class="skill-tag">Investment & Financing</span>
+                    <span class="skill-tag">Industrial Internet</span>
+                    <span class="skill-tag">Public-Private Partnership</span>
+                    <span class="skill-tag">Compliance & Risk</span>
+                    <span class="skill-tag">Logistics & Air Freight</span>
+                    <span class="skill-tag">Belt & Road (BRI)</span>
+                    <span class="skill-tag">Supply Chain Finance</span>
+                    <span class="skill-tag">Advanced Manufacturing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 语言/证书补充 -->
+    <div class="section">
+        <div class="section-title">🌐 Languages & Certifications</div>
+        <div class="skills-wrap">
+            <span class="skill-tag">Chinese (Native)</span>
+            <span class="skill-tag">English (Full Professional - cross-border leadership)</span>
+            <span class="skill-tag">SZSE Independent Director Qualification (in progress)</span>
+            <span class="skill-tag">Cloud / AI / Blockchain / SaaS</span>
+        </div>
+    </div>
+
+    <!-- 荣誉/关键认可 -->
+    <div class="section">
+        <div class="section-title">🏅 Key Recognition & Network</div>
+        <ul class="job-desc" style="margin-bottom: 0;">
+            <li>Executive Vice President of Shenzhen Digital Energy Federation</li>
+            <li>Shenzhen-HK green truck corridor showcased at COP29</li>
+            <li>Strategic ties: MIIT, MOHURD, MOT, SASAC, Huawei, BYD, Tsinghua, McKinsey, Gartner</li>
+            <li>Completed China’s first mixed-ownership data asset capitalization (RMB 270M valuation)</li>
+        </ul>
+    </div>
+
+    <footer>
+        Jason Leung — Enabling global leaders to win in China’s energy transition & advanced manufacturing. PDF generated from LinkedIn profile.
+    </footer>
+</div>
+</body>
+</html>
