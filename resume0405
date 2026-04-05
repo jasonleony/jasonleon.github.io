@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jianzhong Liang · C-level Executive Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', 'Roboto', Arial, sans-serif;
+            background-color: #eef2f5;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.45;
+        }
+        .resume {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0a2b3e 0%, #1c4e6c 100%);
+            color: white;
+            padding: 40px 40px 30px 40px;
+        }
+        .name {
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #cfdce6;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .content {
+            padding: 30px 40px;
+        }
+        .two-columns {
+            display: flex;
+            gap: 40px;
+        }
+        .left-col {
+            flex: 1.2;
+        }
+        .right-col {
+            flex: 2;
+        }
+        @media (max-width: 700px) {
+            .two-columns {
+                flex-direction: column;
+            }
+            .header {
+                padding: 25px;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1c4e6c;
+            border-bottom: 2px solid #1c4e6c;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .summary-text {
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .core-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .core-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .core-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #1c4e6c;
+            font-weight: bold;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+        .exp-company {
+            font-weight: 700;
+            font-size: 16px;
+            color: #0a2b3e;
+        }
+        .exp-title {
+            font-weight: 600;
+            color: #2c6e9e;
+            font-size: 14px;
+        }
+        .exp-date {
+            font-size: 13px;
+            color: #6c7a89;
+        }
+        .exp-desc {
+            font-size: 14px;
+            margin-top: 6px;
+            padding-left: 0;
+            list-style: none;
+        }
+        .exp-desc li {
+            margin-bottom: 6px;
+            padding-left: 18px;
+            position: relative;
+        }
+        .exp-desc li::before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #1c4e6c;
+        }
+        .education-item {
+            margin-bottom: 12px;
+        }
+        .education-degree {
+            font-weight: 700;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            background: #e9ecef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+        .footer-note {
+            background: #f8fafc;
+            padding: 15px 40px;
+            font-size: 11px;
+            color: #7f8c8d;
+            text-align: center;
+            border-top: 1px solid #e0e8ef;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <div class="header">
+        <div class="name">Jianzhong Liang</div>
+        <div class="title">Senior Advisor, China Strategy & Government Affairs | Energy Transition & Intelligentization Expert | Former Fortune 500 Executive</div>
+        <div class="contact">
+            <div class="contact-item">📞 +86 186 0303 1190</div>
+            <div class="contact-item">✉️ 13949076@qq.com</div>
+            <div class="contact-item">📍 Shenzhen | Shanghai | Hong Kong | Singapore</div>
+            <div class="contact-item">🌐 linkedin.com/in/liangjianzhong</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="two-columns">
+            <!-- Left Column -->
+            <div class="left-col">
+                <div class="section">
+                    <div class="section-title">Core Competencies</div>
+                    <ul class="core-list">
+                        <li><strong>Technology Insight & Productization</strong>: Computer science background, 18+ years in architecture; led world-first dynamic pricing air ticketing system, SF Air Cargo platform, CaiZhu supplier tendering cloud.</li>
+                        <li><strong>Operational Execution & 0→1 Ventures</strong>: Built Vanke CaiZhu from scratch (RMB 200bn GMV); at Shenzhen Green Building, gross margin +307%, per capita gross profit +245%.</li>
+                        <li><strong>Government & SOE Collaboration</strong>: Shenzhen-Hong Kong electric truck corridor integrated 7 SOEs + 20 logistics firms, showcased at COP29; co-founded Shenzhen Digital Energy Federation.</li>
+                        <li><strong>Legal & Compliance Excellence</strong>: Zero audit rectifications; completed China's first mixed-ownership data asset capitalization (RMB 270mn valuation).</li>
+                        <li><strong>Capital & M&A</strong>: Managed over RMB 10bn across projects; led RMB 170mn fundraise for Green Building (post-money valuation RMB 1.2bn); 5 strategic investments at Sany Group (total >RMB 10bn).</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Education</div>
+                    <div class="education-item">
+                        <div class="education-degree">Renmin University of China · Master of Finance</div>
+                        <div style="font-size: 13px; color: #5a6c7e;">2019</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree">Northeastern University (China) · B.Sc. Computer Science</div>
+                        <div style="font-size: 13px; color: #5a6c7e;">2003</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Core Skills</div>
+                    <div class="skills">
+                        <span class="skill-tag">Government Relations</span>
+                        <span class="skill-tag">Cross-border M&A</span>
+                        <span class="skill-tag">Industrial Internet</span>
+                        <span class="skill-tag">Investment & Financing</span>
+                        <span class="skill-tag">Digital Transformation</span>
+                        <span class="skill-tag">New Energy Strategy</span>
+                        <span class="skill-tag">Belt & Road</span>
+                        <span class="skill-tag">Public-Private Partnership</span>
+                        <span class="skill-tag">Supply Chain Finance</span>
+                        <span class="skill-tag">Compliance & Risk</span>
+                        <span class="skill-tag">Intelligentization</span>
+                        <span class="skill-tag">Advanced Manufacturing</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Languages & Certifications</div>
+                    <ul class="core-list">
+                        <li>Chinese (native), English (fluent, cross-border team management)</li>
+                        <li>System Architecture, Cloud, AI, Blockchain, SaaS/PaaS</li>
+                        <li>SZSE Independent Director qualification (in progress)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <div class="section">
+                    <div class="section-title">Executive Summary</div>
+                    <div class="summary-text">
+                        Enabling Fortune 500 companies to capture opportunities in China’s energy revolution and advanced manufacturing. A bridge between government and enterprise, with deep expertise in capital deployment and regulatory compliance. 18+ years of experience blending multinational technology leadership with hands-on operational roles. Computer science background. Led cross-border teams of 800+, executed projects exceeding RMB 10 billion, and delivered multiple national demonstration projects.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Professional Experience</div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">Shenzhen Green Building Technology Co., Ltd.</span>
+                            <span class="exp-date">2023 – Present</span>
+                        </div>
+                        <div class="exp-title">Founder, Director & President</div>
+                        <ul class="exp-desc">
+                            <li>Pioneered a “state-owned holding + founder operation” mixed-ownership model replicated in 6 cities, mobilizing over RMB 5bn in private capital.</li>
+                            <li>Led Shenzhen-Hong Kong electric heavy-duty truck corridor, integrating 7 SOEs, 20 logistics firms, and RMB 200mn leasing; reduced carbon by 84,000 tons/year; featured at COP29.</li>
+                            <li>Secured RMB 170mn Series B from Renyi Capital at a post-money valuation of RMB 1.2bn; completed China’s first mixed-ownership data asset capitalization (RMB 270mn).</li>
+                            <li>Co-founded Shenzhen Digital Energy Federation (executive vice president), securing over RMB 50mn in policy benefits.</li>
+                            <li>2025 results: gross margin +307% YoY, per capita gross profit +245%, zero bad debt, zero audit findings.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">Sany Group</span>
+                            <span class="exp-date">2020 – 2022</span>
+                        </div>
+                        <div class="exp-title">Director, CEO Office / Special Assistant to CEO</div>
+                        <ul class="exp-desc">
+                            <li>Proposed “One Body, Two Wings” strategy; drove international expansion – overseas revenue share exceeded 40%.</li>
+                            <li>Managed 5 strategic investment projects (total >RMB 10bn); advised Sany Construction and Rootcloud on IPO prospectus drafting.</li>
+                            <li>Led “Process 4.0” organizational transformation, shifting from functional to process-oriented management.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">Vanke Group / Zhuhai CaiZhu Technology</span>
+                            <span class="exp-date">2017 – 2020</span>
+                        </div>
+                        <div class="exp-title">Head of Strategy / Founding Partner, CSO & CTO</div>
+                        <ul class="exp-desc">
+                            <li>Built CaiZhu from zero to RMB 200bn GMV, serving 3,000+ enterprises – became China’s largest construction materials industrial internet platform.</li>
+                            <li>Developed supplier tendering cloud platform used by State Council Administration, Shenzhen Public Works Bureau, and hundreds of government clients.</li>
+                            <li>Established “Future City Joint Lab” with Microsoft, driving 9 digital innovation projects.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">SF Express</span>
+                            <span class="exp-date">2016 – 2017</span>
+                        </div>
+                        <div class="exp-title">Technology Director, CSO Office</div>
+                        <ul class="exp-desc">
+                            <li>Built air cargo trading platform with annual volume of 700,000 tons (4.6% of China’s total air freight), creating the “China Memphis” model.</li>
+                            <li>Positioned SF as “nation’s largest air cargo supply chain service provider”.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">Expedia China R&D Center (Partner Company)</span>
+                            <span class="exp-date">2009 – 2016</span>
+                        </div>
+                        <div class="exp-title">Director, T2 BU</div>
+                        <ul class="exp-desc">
+                            <li>Led Seattle and China teams (total >800, China 600), delivering 1/3 of global R&D output.</li>
+                            <li>Developed world’s first dynamic pricing air ticketing system and China’s first car rental & ground service big data platform.</li>
+                            <li>Participated in cross-border acquisition of a Chinese R&D institution, handling due diligence and post-merger integration.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <span class="exp-company">StarCite Ltd (Silicon Valley)</span>
+                            <span class="exp-date">2006 – 2009</span>
+                        </div>
+                        <div class="exp-title">Co-Founder, Principal Engineer, Head of Shanghai R&D Center</div>
+                        <ul class="exp-desc">
+                            <li>Co-founded the company and established Shanghai R&D center, transferred core technology platform from US to China.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Network & Recognition</div>
+                    <ul class="core-list">
+                        <li>Government: Close ties with MIIT, MOHURD, MOT, SASAC, Hetao Development Authority.</li>
+                        <li>Industry: Strategic partnerships with Huawei, Sany, BYD, Vanke, SF Express.</li>
+                        <li>Academic: Collaborate with Tsinghua University, Microsoft Research, McKinsey, Gartner.</li>
+                        <li>Honors: Executive Vice President of Shenzhen Digital Energy Federation; Shenzhen-Hong Kong green corridor showcased at COP29.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">
+        Jianzhong Liang · Senior Advisor, China Strategy & Government Affairs · Open to C-level opportunities in Hong Kong, Singapore, Shanghai · Immediate availability
+    </div>
+</div>
+</body>
+</html>
